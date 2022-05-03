@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime
 
 def grabTeamWinsPerMonth():
-    df_team_data = pd.read_json('collectedData/allTeamData.json')
+    df_team_data = pd.read_json('../collectedData/allTeamData.json')
     df_schedule = pd.DataFrame(df_team_data["LOS ANGELES LAKERS"][2001]["Schedule"]["games"])
     
     # Turn string dates (Wed, Nov 15, 2000) from schedule into datetime objects (2000-11-15) to compare time
@@ -20,7 +20,7 @@ def grabTeamWinsPerMonth():
         try:
             month_win_totals[i[1]["Date"].month][i[1]["Result"]] += 1
         except KeyError:
-            month_win_totals[i[1]["Date"].month] = {'W': 0, 'L': 0} 
+            month_win_totals[i[1]["Date"].month] = { 'W': 0, 'L': 0 } 
             month_win_totals[i[1]["Date"].month][i[1]["Result"]] = 1
 
     # Append each month (with total wins/losses) into a list of months (month_df)

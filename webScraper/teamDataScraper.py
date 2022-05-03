@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 import requests
-from teamDataInitializers import generateTeamURLs, generateInitTeamDataObject
-from pageScrapers import rosterPageScraper, schedulePageScraper
+from webScraper.teamDataInitializers import generateTeamURLs, generateInitTeamDataObject
+from webScraper.pageScrapers import rosterPageScraper, schedulePageScraper
 from multiprocessing import Pool
 import json
 
@@ -87,8 +87,8 @@ def main():
     for key, value in all_team_data.items(): print(key, len(value), sep=" | ")
 
     df_master = pd.DataFrame(all_team_data)
-    df_master.to_csv("collectedData/allTeamData.csv", encoding="utf-8", index_label="index")
-    with open("collectedData/allTeamData.json", "w+") as f:
+    df_master.to_csv("../collectedData/allTeamData.csv", encoding="utf-8", index_label="index")
+    with open("../collectedData/allTeamData.json", "w+") as f:
         json.dump(df_master.to_dict(), f)
 
 if __name__=="__main__":
