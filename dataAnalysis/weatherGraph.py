@@ -17,7 +17,7 @@ los_angeles = Point(34.052235, -118.243683, 305)
 data = Monthly(los_angeles, start, end)
 data = data.fetch()
 df = pd.DataFrame(data)
-df.to_csv("tempData.csv", encoding="utf-8", index_label="index")
+df.to_csv("dataAnalysis/tempData.csv", encoding="utf-8", index_label="index")
 
 # Get monthly team data
 team_data = grabTeamWinsPerMonth()

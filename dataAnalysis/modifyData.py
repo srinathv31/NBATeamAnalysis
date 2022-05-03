@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime
 
 def grabTeamWinsPerMonth():
-    df_team_data = pd.read_json('../collectedData/allTeamData.json')
+    df_team_data = pd.read_json('collectedData/allTeamData.json')
     df_schedule = pd.DataFrame(df_team_data["LOS ANGELES LAKERS"][2001]["Schedule"]["games"])
     
     # Turn string dates (Wed, Nov 15, 2000) from schedule into datetime objects (2000-11-15) to compare time
