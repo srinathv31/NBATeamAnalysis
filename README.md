@@ -6,3 +6,4 @@ Run webScraper/TeamDataScraper.py to scrape data
 
 # Package Manager - Poetry
 Install Poetry and use the command 'Poetry install' to install all packages used in this repo
+Link: https://python-poetry.org/docs/
